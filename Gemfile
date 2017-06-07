@@ -47,11 +47,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #mee
 #group :test do
-gem 'minitest-reporters', '1.0.5'
+
 #gem 'guard-minitest',  '2.3.1'
 #end
 #gem 'win32console', '1.3.2'
-gem 'bootstrap-sass',	'3.2.0.0'
+gem 'bootstrap-sass',   '3.2.0.0'
 ##for MD5 hash
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 #for form_for
@@ -60,6 +60,10 @@ gem 'mini_magick',             '3.8.0'
 gem 'fog',                     '1.36.0'
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
+
+ 
+  gem 'minitest-reporters', '1.0.5'
+
 
 gem 'puma', '~> 3.4'
 
