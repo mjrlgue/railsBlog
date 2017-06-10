@@ -51,6 +51,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #gem 'guard-minitest',  '2.3.1'
 #end
 #gem 'win32console', '1.3.2'
+gem 'faker', '~> 1.7', '>= 1.7.3'
 gem 'bootstrap-sass',   '3.2.0.0'
 ##for MD5 hash
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
@@ -66,4 +67,6 @@ gem 'bootstrap-will_paginate', '0.0.10'
 
 
 gem 'puma', '~> 3.4'
+#win32console
+gem 'jarib-win32console', '1.2.0.1'
 

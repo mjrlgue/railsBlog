@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       else
         forget user
       end
-      redirect_to user
+      redirect_back_or user
       flash[:success] = "Welcome dear user !"
   		#log in user and redirect to user's show(profile) page
 

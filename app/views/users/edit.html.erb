@@ -1,5 +1,5 @@
-<% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<% provide(:title, 'Modifier votre profile') %>
+<h1>Modifier votre profile</h1>
 <div class="row">
   <div class="cold-md-6 col-md-offset-0.5">
     <%= form_for(@user) do |f| %>
@@ -18,8 +18,12 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit "Crée mon compte", class: "btn btn-primary" %>
+      <%= f.submit "Enregistrer les modifications", class: "btn btn-primary" %>
 
     <% end %>
+    <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <a href="http://gravatar.com/emails" target="_blank">Modifier votre image</a>
+    </div>
   </div>    
 </div>

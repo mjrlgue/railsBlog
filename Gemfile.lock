@@ -65,6 +65,8 @@ GEM
     erubis (2.7.0)
     excon (0.56.0)
     execjs (2.7.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.36.0)
@@ -178,6 +180,7 @@ GEM
     i18n (0.8.4)
     inflecto (0.0.2)
     ipaddress (0.8.3)
+    jarib-win32console (1.2.0.1)
     jbuilder (2.6.4)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2)
@@ -285,7 +288,9 @@ DEPENDENCIES
   byebug
   carrierwave (= 0.10.0)
   coffee-rails (~> 4.1.0)
+  faker (~> 1.7, >= 1.7.3)
   fog (= 1.36.0)
+  jarib-win32console (= 1.2.0.1)
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick (= 3.8.0)

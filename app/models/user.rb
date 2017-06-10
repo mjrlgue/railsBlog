@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
     ##add password to users when registring
     has_secure_password #this methode gives us two attributes: password, password_confirmation
-    validates :password, length: { minimum: 6 }
+    validates :password, length: { minimum: 6 }, allow_blank: true
 
     def User.digest(string)
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

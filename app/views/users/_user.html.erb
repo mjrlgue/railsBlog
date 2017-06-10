@@ -1,0 +1,10 @@
+<li>
+  <%= link_to gravatar_for(user, size: 80), user %>
+  <%= link_to user.name, user %> <br>
+  <small><em><%= user.email %></em></small>
+
+  <!-- display delete option only to admins-->
+  <% if current_user.admin? && !current_user?(user) %>
+  | <%= link_to "delete", user, class: "button icon search", method: :delete, data: { confirm: "Suppression du compte ?" } %>
+  <% end %>
+</li>

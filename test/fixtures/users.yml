@@ -4,3 +4,16 @@ marwane:
   name: Marwane Chahoud
   email: marwane.chahoud@gmail.com
   password_digest: <%= User.digest('password') %>
+  admin: true
+
+monkey:
+  name: Sterling Archer
+  email: sterling.archer@strange.com
+  password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name: <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
