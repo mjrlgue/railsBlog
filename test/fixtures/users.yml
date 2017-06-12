@@ -11,6 +11,16 @@ monkey:
   email: sterling.archer@strange.com
   password_digest: <%= User.digest('password') %>
 
+tiger:
+  name: Little Tiger
+  email: am.tiger@example.com
+  password_digest: <%= User.digest('password') %>
+
+lion:
+  name: Lion Zoo
+  email: am.lion@example.com
+  password_digest: <%= User.digest('password') %>
+
 <% 30.times do |n| %>
 user_<%= n %>:
   name: <%= "User #{n}" %>

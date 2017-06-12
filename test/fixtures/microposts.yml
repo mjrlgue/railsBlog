@@ -1,0 +1,46 @@
+post:
+  content: "I just posted something"
+  created_at: <%= 10.minutes.ago %>
+  user: marwane
+
+anotherpost:
+  content: "This post is awesome !"
+  created_at: <%= 1.years.ago %>
+  user: marwane
+
+anotherone:
+  content: "Lorem ipsum: http://fr.lipsum.com/"
+  created_at: <%= 2.hours.ago %>
+  user: marwane
+
+recent:
+  content: "bla bla"
+  created_at: <%= Time.zone.now %>
+  user: marwane
+
+<% 30.times do |n| %>
+micropost_<%= n %>:
+  content: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 42.days.ago %>
+  user: marwane
+<% end %>
+
+ants:
+  content: "hello world"
+  created_at: <%= 2.years.ago %>
+  user: monkey
+
+zone:
+  content: "I am the danger"
+  created_at: <%= 3.days.ago %>
+  user: lion
+
+tone:
+  content: "Hey bro, are you insane ?"
+  created_at: <%= 10.minutes.ago %>
+  user: tiger
+
+van:
+  content: "Hi, Lion, stop that pelase !"
+  created_at: <%= 4.hours.ago %>
+  user: tiger

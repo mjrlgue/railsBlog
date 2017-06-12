@@ -1,5 +1,6 @@
 require 'securerandom'
 class User < ActiveRecord::Base
+  has_many :microposts, dependent: :destroy
   attr_accessor :remember_token #have access to the token
     #save email in lower_case
     before_save{ self.email=email.downcase }
@@ -37,6 +38,12 @@ class User < ActiveRecord::Base
     def authenticated?(remember_token)
       return false if remember_digest.nil?
       BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    end
+
+    #define a proto-feed
+    #see "following users" for the full implementation
+    def feed
+      Micropost.where("user_id = ?", id)
     end
 
     

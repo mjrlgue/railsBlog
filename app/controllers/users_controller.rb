@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   def show
   	#show user with param given with the url
   	@user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
   	#debugger : for debug
   end
 
@@ -60,20 +61,15 @@ private
 	def user_params
 	  params.require(:user).permit(:name, :email, :password,:password_confirmation)	
 	end
-  def logged_in_user
-    unless  logged_in?
-      #save the URL that a user want go in
-      store_location
-      flash[:danger] = "Veuillez vous authentifiez !"
-      redirect_to login_url
-    end
-  end
+
+  #confirm a logged_in user
+      #removed from here and pasted in: app/controllers/application_controller.rb
 
   #confirm the correct user
   def correct_user
     @user = User.find(params[:id])
     redirect_to(root_url) unless  current_user?(@user)
-    end
+  end
 
     #confirms a user is an admin
     def admin_user
