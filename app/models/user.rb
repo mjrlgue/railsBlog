@@ -1,6 +1,16 @@
 require 'securerandom'
 class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy
+  #relationships
+  has_many :active_relationships, class_name: "Relationship", 
+                                                foreign_key: "follower_id",
+                                                dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  #passive-relationships
+  has_many :passive_relationships, class_name: "Relationship", 
+                                                foreign_key: "followed_id",
+                                                dependent: :destroy
+  has_many :followers, through: :passive_relationships, source: :follower
   attr_accessor :remember_token #have access to the token
     #save email in lower_case
     before_save{ self.email=email.downcase }
@@ -43,7 +53,26 @@ class User < ActiveRecord::Base
     #define a proto-feed
     #see "following users" for the full implementation
     def feed
-      Micropost.where("user_id = ?", id)
+      following_ids_subselect = "SELECT followed_id FROM relationships
+                                              WHERE follower_id = :user_id"
+      Micropost.where("user_id IN (#{following_ids_subselect}) 
+                                OR user_id = :user_id",  user_id: id)
+    end
+
+    #follow a user
+    def follow(other_user)
+      active_relationships.create(followed_id: other_user.id)
+    end
+
+    #unfollow a user
+    def unfollow(other_user)
+      active_relationships.find_by(followed_id: other_user.id).destroy
+    end
+
+    #returns true if the current user is following the other user
+    def following?(other_user)
+      #!active_relationships.find_by(followed_id: other_user.id).nil? or
+      following.include?(other_user)
     end
 
     

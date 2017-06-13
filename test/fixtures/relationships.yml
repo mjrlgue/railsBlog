@@ -1,0 +1,15 @@
+one:
+  follower: marwane
+  followed: lion
+
+two:
+  follower: marwane
+  followed: tiger
+
+three:
+  follower: lion
+  followed: marwane
+
+four:
+  follower: monkey
+  followed: marwane
