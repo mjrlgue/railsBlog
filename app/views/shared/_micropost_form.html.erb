@@ -4,8 +4,14 @@
     <%= f.text_area :content, placeholder: "Ecrire ici..." %>
   </div>
   <%= f.submit "Postez", class: "btn btn-primary" %>
+  <!-- picture uploader -->
   <span class="picture">
     <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
+  </span>
+  <!-- video uploader -->
+  Upload video:
+  <span class="picture">
+    <%= f.file_field :video %>
   </span>
 <% end %>
 

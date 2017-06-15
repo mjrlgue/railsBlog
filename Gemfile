@@ -62,6 +62,12 @@ gem 'fog',                     '1.36.0'
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'minitest-reporters', '1.0.5'
+gem 'carrierwave-video', '0.5.6'
+#gem 'rmagick', '2.16'
+##ffmpeg
+gem 'ffmpeg', '0.2.5'
+gem 'streamio-ffmpeg', '3.0.2'
+gem 'jw_player_helper', '0.0.1'
 #win32console
 gem 'jarib-win32console', '1.2.0.1'
 
